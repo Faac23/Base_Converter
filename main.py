@@ -11,7 +11,7 @@ def decabin():
 	while num > 0:
 		result = str(num % 2) + result
 		num = int(num/2)
-		if isNeg:
+	if isNeg:
 		result = "-" + result
 	print(str(x) + " en binario es " + result)
 
