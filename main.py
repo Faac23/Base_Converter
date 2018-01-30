@@ -15,6 +15,10 @@ def convertiradec():
                     print("El numero no esta en la base dada.")
                     chequeoBase = False
                     break;
+                elif num[-i] != "0" or num[-i] != "1" or num[-i] != "2" or num[-i] != "3" or num[-i] != "4" or num[-i] != "5" or num[-i] != "6" or num[-i] != "7" or num[-i] != "8" or num[-i] != "9":
+                    print("El numero no esta en la base dada.")
+                    chequeoBase = False
+                    break;
                 if num[-i] != "-":
                     if int(num[-i]) >= baseType:
                         print("El numero no esta en la base dada.")
