@@ -1,5 +1,6 @@
 # Convertir desde una base dada por el usuario a base decimal
 def convertiradec():
+    aceptables = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     baseType = int(raw_input("Desde que base quiere convertir: "))
     num = str(raw_input("Escriba el numero: "))
     result = 0
@@ -8,23 +9,24 @@ def convertiradec():
     if num[0] == "-":
         isNeg = True
     for i in range(1, len(num)+1):
-            for n in range(1, baseType):
+        for n in range(1, baseType):
+            if num[-i] in aceptables:
                 if num[-i] == str(n):
                     result += n*baseType**(i-1)
                 elif num[-i] == "-" and i != len(num):
                     print("El numero no esta en la base dada.")
                     chequeoBase = False
                     break;
-                elif num[-i] != "0" or num[-i] != "1" or num[-i] != "2" or num[-i] != "3" or num[-i] != "4" or num[-i] != "5" or num[-i] != "6" or num[-i] != "7" or num[-i] != "8" or num[-i] != "9":
-                    print("El numero no esta en la base dada.")
-                    chequeoBase = False
-                    break;
                 if num[-i] != "-":
                     if int(num[-i]) >= baseType:
-                        print("El numero no esta en la base dada.")
-                        chequeoBase = False
-                        break;
-            if chequeoBase == False:
+                       print("El numero no esta en la base dada.")
+                       chequeoBase = False
+                       break;
+            else:
+                print("El numero no esta en la base dada.")
+                chequeoBase = False
+                break;
+        if chequeoBase == False:
                 break;
     if isNeg:
         result = -result
