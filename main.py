@@ -1,6 +1,6 @@
 # Convertir desde una base dada por el usuario a base decimal
 def convertiradec():
-    aceptables = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    aceptables = ["-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     baseType = int(raw_input("Desde que base quiere convertir: "))
     num = str(raw_input("Escriba el numero: "))
     result = 0
