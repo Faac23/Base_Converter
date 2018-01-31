@@ -1,11 +1,10 @@
 # Convertir desde una base dada por el usuario a base decimal
-def convertiradec():
+def convertiradec(baseType):
     aceptables = ["-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    baseType = int(raw_input("Desde que base quiere convertir: "))
-    num = str(raw_input("Escriba el numero: "))
-    result = 0
     chequeoBase = True
     isNeg = False
+    result = 0
+    num = str(raw_input("Escriba el numero: "))
     if num[0] == "-":
         isNeg = True
     for i in range(1, len(num)+1):
@@ -32,3 +31,16 @@ def convertiradec():
         result = -result
     if chequeoBase:
         print(num + " en base decimal es " + str(result))
+def isIntable(string):
+    digitos = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    notNum = False
+    for i in range(len(string)):
+        if not string[i] in digitos:
+            notNum = True
+    if notNum:
+        print("No es un numero natural.")
+    else:
+        string = int(string)
+        convertiradec(string)
+baseInput = str(raw_input("Desde que base quiere convertir: "))
+isIntable(baseInput)
