@@ -42,5 +42,12 @@ def isIntable(string):
     else:
         string = int(string)
         convertiradec(string)
-baseInput = str(raw_input("Desde que base quiere convertir: "))
-isIntable(baseInput)
+#Starts
+choice = str(raw_input("Si quiere convertir a base decimal escriba 'a decimal'. Si quiere convertir desde base decimal escriba 'de decimal'. "))
+if choice.lower() == "a decimal":
+    baseInput = str(raw_input("Desde que base quiere convertir: "))
+    isIntable(baseInput)
+elif choice.lower() == "de decimal":
+    print("Proximamente")
+else:
+    print("No te entendí, intenta nuevamente.")
